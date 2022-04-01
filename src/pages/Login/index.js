@@ -5,9 +5,12 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Form from "../../components/Form";
 import * as L from "./styles";
 
-import Logo from "../../assets/Logo.svg";
 import Input from "../../components/Input";
 import Error from "../../components/Error";
+import LogoBox from "../../components/LogoBox";
+
+import WhiteLogo from "../../assets/whiteLogo.svg";
+
 import { useUser } from "../../providers/User";
 
 const Login = () => {
@@ -28,10 +31,8 @@ const Login = () => {
 
   return (
     <L.Container>
-      <L.LogoBox>
-        <img src={Logo} alt="Logo ioasys" />
-        <h1>Books</h1>
-      </L.LogoBox>
+      <LogoBox logo={WhiteLogo} whiteMode />
+
       <Form handleSubmit={handleSubmit} submit={submitLogin}>
         <Input
           label="E-mail"
