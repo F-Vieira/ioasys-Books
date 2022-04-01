@@ -10,7 +10,7 @@ import { useBook } from "../../providers/Book";
 import * as H from "./styles";
 
 const Home = () => {
-  const { books } = useBook();
+  const { books, handleRetrieveBook } = useBook();
 
   const navigate = useNavigate();
 
@@ -35,6 +35,7 @@ const Home = () => {
             pages={book.pageCount}
             publisher={book.publisher}
             published={book.published}
+            onClick={() => handleRetrieveBook(book.id)}
           />
         ))}
       </H.Content>

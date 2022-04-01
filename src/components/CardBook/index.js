@@ -1,8 +1,16 @@
 import * as CB from "./styles";
 
-const CardBook = ({ cover, title, authors, pages, publisher, published }) => {
+const CardBook = ({
+  cover,
+  title,
+  authors,
+  pages,
+  publisher,
+  published,
+  onClick,
+}) => {
   return (
-    <CB.Container>
+    <CB.Container onClick={onClick}>
       <CB.Cover
         // src={
         //   cover === null
