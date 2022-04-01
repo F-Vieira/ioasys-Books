@@ -8,25 +8,32 @@ export const Container = styled.footer`
 
   color: var(--gray);
 
-  div {
-    width: 32px;
-    height: 32px;
-    border: 1px solid #333333;
-    border-radius: 50%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    cursor: pointer;
-
-    svg {
-      font-size: 12px;
-    }
+  .prev_page {
+    color: ${({ disablePrev }) => disablePrev && "#33333333"};
+  }
+  .next_page {
+    color: ${({ disableNext }) => disableNext && "#33333333"};
   }
 
   span {
     font-size: 12px;
     line-height: 32px;
+  }
+`;
+
+export const NextPrev = styled.div`
+  width: 32px;
+  height: 32px;
+  border: 1px solid #33333333;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  svg {
+    font-size: 12px;
   }
 `;

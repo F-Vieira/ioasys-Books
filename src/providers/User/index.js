@@ -11,7 +11,7 @@ export const UserProvider = ({ children }) => {
 
   const [error, setError] = useState("");
 
-  const { handleListBooks, setToken } = useBook();
+  const { page, handleListBooks, setToken } = useBook();
 
   const handleLogin = (data) => {
     api
@@ -39,7 +39,7 @@ export const UserProvider = ({ children }) => {
       }, 2000);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [loading, navigate]);
+  }, [loading, navigate, page]);
 
   return (
     <userContext.Provider value={{ handleLogin, error }}>
