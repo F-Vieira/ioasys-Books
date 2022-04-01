@@ -2,10 +2,13 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
   :root {
-    --white: #FFFFFF;
     --transparent_black: rgba(0, 0, 0, 0.32);
     --transparent_white: rgba(255, 255, 255, 0.4);
+    --white: #FFFFFF;
+    --gray: #333333;
+    --light_gray: #999999;
     --pink: #B22E6F;
+    --dark_pink: #AB2680;
 
     --primary_font: 'Heebo', sans-serif;
   }
