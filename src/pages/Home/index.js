@@ -1,12 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import { FiLogOut } from "react-icons/fi";
 
 import CardBook from "../../components/CardBook";
 import LogoBox from "../../components/LogoBox";
-import BlackLogo from "../../assets/blackLogo.svg";
+import Pagination from "../../components/Pagination";
 
+import BlackLogo from "../../assets/blackLogo.svg";
 import { useBook } from "../../providers/Book";
 import * as H from "./styles";
-import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const { books } = useBook();
@@ -37,6 +38,7 @@ const Home = () => {
           />
         ))}
       </H.Content>
+      <Pagination />
     </H.Container>
   );
 };

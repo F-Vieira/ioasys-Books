@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import HomeBackground from "../../assets/homeBackground.svg";
-import Back from "../../assets/BackgroundImage.svg";
 
 export const Container = styled.main`
   background-image: url(${HomeBackground});
@@ -9,6 +8,10 @@ export const Container = styled.main`
 
   section:first-child {
     padding: 40px 0 40px 35px;
+  }
+
+  footer {
+    padding-bottom: 30px;
   }
 `;
 
@@ -36,6 +39,7 @@ export const Logout = styled.div`
   position: absolute;
   top: 45px;
   right: 35px;
+
   svg {
     width: 70%;
     height: 70%;
