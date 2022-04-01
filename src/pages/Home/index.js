@@ -6,14 +6,22 @@ import BlackLogo from "../../assets/blackLogo.svg";
 
 import { useBook } from "../../providers/Book";
 import * as H from "./styles";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const { books } = useBook();
 
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/");
+  };
+
   return (
     <H.Container>
       <LogoBox logo={BlackLogo} />
-      <H.Logout>
+      <H.Logout onClick={handleLogout}>
         <FiLogOut />
       </H.Logout>
       <H.Content>

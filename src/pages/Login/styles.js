@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import BackgroundImage from "../../assets/BackgroundImage.svg";
+import LoginBackground from "../../assets/loginBackground.svg";
 
 export const Container = styled.main`
-  background-image: url(${BackgroundImage});
+  background-image: url(${LoginBackground});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: -280px;

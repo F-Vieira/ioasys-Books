@@ -1,16 +1,23 @@
 import styled from "styled-components";
+import HomeBackground from "../../assets/homeBackground.svg";
+import Back from "../../assets/BackgroundImage.svg";
 
 export const Container = styled.main`
+  background-image: url(${HomeBackground});
+  background-repeat: no-repeat;
+  background-size: cover;
+
   section:first-child {
-    margin: 40px 0 40px 35px;
+    padding: 40px 0 40px 35px;
   }
 `;
 
 export const Content = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding-bottom: 45px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  grid-gap: 15px 0;
 `;
 
 export const Logout = styled.div`

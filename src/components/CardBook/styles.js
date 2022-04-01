@@ -10,6 +10,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  cursor: pointer;
 `;
 
 export const Cover = styled.img`

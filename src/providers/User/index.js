@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
+import { useBook } from "../Book";
 
 const userContext = createContext();
 
@@ -10,6 +11,8 @@ export const UserProvider = ({ children }) => {
 
   const [error, setError] = useState("");
 
+  const { handleListBooks, setToken } = useBook();
+
   const handleLogin = (data) => {
     api
       .post("/auth/sign-in", data)
@@ -17,6 +20,7 @@ export const UserProvider = ({ children }) => {
         setLoading(true);
         setTimeout(() => {
           const token = resp.headers.authorization;
+          setToken(token);
           localStorage.setItem("@ioasys:token", token);
           setLoading(false);
         }, 2000);
@@ -28,8 +32,13 @@ export const UserProvider = ({ children }) => {
 
   useEffect(() => {
     if (!loading && localStorage.getItem("@ioasys:token") !== null) {
-      navigate("/home");
+      handleListBooks();
+
+      setTimeout(() => {
+        navigate("/home");
+      }, 2000);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading, navigate]);
 
   return (

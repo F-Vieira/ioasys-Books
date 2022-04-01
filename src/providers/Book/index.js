@@ -1,15 +1,16 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { createContext, useContext, useState } from "react";
 import api from "../../services/api";
 
 const bookContext = createContext();
 
 export const BookProvider = ({ children }) => {
   const [books, setBooks] = useState([]);
-  const [token] = useState(localStorage.getItem("@ioasys:token") || "");
+  const [token, setToken] = useState(
+    localStorage.getItem("@ioasys:token") || ""
+  );
 
-  const handleListBooks = () => {
-    api
+  const handleListBooks = async () => {
+    await api
       .get("/books?page=1&amount=10", {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -19,12 +20,8 @@ export const BookProvider = ({ children }) => {
       .catch((err) => console.log(err.response));
   };
 
-  useEffect(() => {
-    handleListBooks();
-  }, [token]);
-
   return (
-    <bookContext.Provider value={{ handleListBooks, books }}>
+    <bookContext.Provider value={{ handleListBooks, books, setToken }}>
       {children}
     </bookContext.Provider>
   );

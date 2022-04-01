@@ -3,9 +3,9 @@ import { BookProvider } from "./Book";
 
 const Providers = ({ children }) => {
   return (
-    <UserProvider>
-      <BookProvider>{children}</BookProvider>
-    </UserProvider>
+    <BookProvider>
+      <UserProvider>{children}</UserProvider>
+    </BookProvider>
   );
 };
 
