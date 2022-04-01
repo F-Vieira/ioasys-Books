@@ -4,6 +4,7 @@ export default createGlobalStyle`
   :root {
     --white: #FFFFFF;
     --transparent_black: rgba(0, 0, 0, 0.32);
+    --transparent_white: rgba(255, 255, 255, 0.4);
     --pink: #B22E6F;
 
     --primary_font: 'Heebo', sans-serif;

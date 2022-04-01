@@ -19,7 +19,6 @@ export const LogoBox = styled.div`
 
   width: 90%;
   margin-bottom: 50px;
-  /* border: 1px solid white; */
 
   h1 {
     margin-left: 16.6px;
