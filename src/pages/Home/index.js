@@ -8,6 +8,7 @@ import Pagination from "../../components/Pagination";
 import BlackLogo from "../../assets/blackLogo.svg";
 import { useBook } from "../../providers/Book";
 import * as H from "./styles";
+import DetailCardBook from "../../components/DetailCardBook";
 
 const Home = () => {
   const { books, handleRetrieveBook } = useBook();
@@ -18,6 +19,8 @@ const Home = () => {
     localStorage.clear();
     navigate("/");
   };
+
+  console.log(books[0]);
 
   return (
     <H.Container>
@@ -40,6 +43,19 @@ const Home = () => {
         ))}
       </H.Content>
       <Pagination />
+      <DetailCardBook
+        key="1"
+        cover={books[0].imageUrl}
+        title={books[0].title}
+        authors={books[0].authors}
+        pages={books[0].pageCount}
+        publisher={books[0].publisher}
+        published={books[0].published}
+        language={books[0].language}
+        isbn10={books[0].isbn10}
+        isbn13={books[0].isbn13}
+        description={books[0].description}
+      />
     </H.Container>
   );
 };

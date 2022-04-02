@@ -9,7 +9,6 @@ export const BookProvider = ({ children }) => {
   );
 
   const [books, setBooks] = useState([]);
-  const [book, setBook] = useState({});
 
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(10);

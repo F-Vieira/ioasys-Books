@@ -25,6 +25,10 @@ export default createGlobalStyle`
     font-family: var(--primary_font);
   }
 
+  h1, h2, h3 {
+    font-size: 1rem;
+  }
+
   button {
     cursor: pointer;
     font-family: inherit;
