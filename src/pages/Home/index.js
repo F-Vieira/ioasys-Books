@@ -11,7 +11,8 @@ import * as H from "./styles";
 import DetailCardBook from "../../components/DetailCardBook";
 
 const Home = () => {
-  const { books, handleRetrieveBook } = useBook();
+  const { books, book, showBookDetail, setShowBookDetail, handleRetrieveBook } =
+    useBook();
 
   const navigate = useNavigate();
 
@@ -19,8 +20,6 @@ const Home = () => {
     localStorage.clear();
     navigate("/");
   };
-
-  console.log(books[0]);
 
   return (
     <H.Container>
@@ -43,19 +42,22 @@ const Home = () => {
         ))}
       </H.Content>
       <Pagination />
-      <DetailCardBook
-        key="1"
-        cover={books[0].imageUrl}
-        title={books[0].title}
-        authors={books[0].authors}
-        pages={books[0].pageCount}
-        publisher={books[0].publisher}
-        published={books[0].published}
-        language={books[0].language}
-        isbn10={books[0].isbn10}
-        isbn13={books[0].isbn13}
-        description={books[0].description}
-      />
+      {showBookDetail && (
+        <DetailCardBook
+          key={book.id}
+          cover={book.imageUrl}
+          title={book.title}
+          authors={book.authors}
+          pages={book.pageCount}
+          publisher={book.publisher}
+          published={book.published}
+          language={book.language}
+          isbn10={book.isbn10}
+          isbn13={book.isbn13}
+          description={book.description}
+          closeDetail={() => setShowBookDetail(false)}
+        />
+      )}
     </H.Container>
   );
 };

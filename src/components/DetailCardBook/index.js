@@ -14,10 +14,11 @@ const DetailCardBook = ({
   isbn10,
   isbn13,
   description,
+  closeDetail,
 }) => {
   return (
     <DCB.Container>
-      <DCB.Close>
+      <DCB.Close onClick={closeDetail}>
         <AiOutlineClose />
       </DCB.Close>
       <DCB.Card>

@@ -9,6 +9,8 @@ export const BookProvider = ({ children }) => {
   );
 
   const [books, setBooks] = useState([]);
+  const [book, setBook] = useState([]);
+  const [showBookDetail, setShowBookDetail] = useState(false);
 
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(10);
@@ -35,7 +37,10 @@ export const BookProvider = ({ children }) => {
           Authorization: `Bearer ${token}`,
         },
       })
-      .then((resp) => console.log(resp.data))
+      .then((resp) => {
+        setBook(resp.data);
+        setShowBookDetail(true);
+      })
       .catch((err) => console.log(err.response));
   };
 
@@ -49,6 +54,9 @@ export const BookProvider = ({ children }) => {
         allPages,
         page,
         setPage,
+        book,
+        showBookDetail,
+        setShowBookDetail,
       }}
     >
       {children}
