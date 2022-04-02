@@ -7,10 +7,13 @@ export const Container = styled.div`
   padding: 7px 12px;
 
   background-color: var(--transparent_black);
-  /* backdrop-filter: blur(2x); */
   border-radius: 4px;
 
   position: relative;
+
+  @media screen and (min-width: 768px) {
+    width: 368px;
+  }
 `;
 
 export const Label = styled.label`
@@ -18,8 +21,6 @@ export const Label = styled.label`
   opacity: 0.5;
   font-size: 12px;
 `;
-
-export const InputBox = styled.div``;
 
 export const Input = styled.input`
   background-color: inherit;

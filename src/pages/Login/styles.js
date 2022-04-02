@@ -5,25 +5,22 @@ export const Container = styled.main`
   background-image: url(${LoginBackground});
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: -280px;
+  background-position: 40%;
+
   height: 100vh;
+  padding: 0 15px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
 
-export const LogoBox = styled.div`
-  display: flex;
+  section {
+    margin-bottom: 2.5rem;
+  }
 
-  width: 90%;
-  margin-bottom: 50px;
-
-  h1 {
-    margin-left: 16.6px;
-    font-weight: lighter;
-    font-size: 28px;
-    color: var(--white);
+  @media screen and (min-width: 768px) {
+    align-items: flex-start;
+    padding-left: 80px;
   }
 `;
