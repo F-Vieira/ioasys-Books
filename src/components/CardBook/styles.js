@@ -12,6 +12,10 @@ export const Container = styled.div`
   align-items: center;
 
   cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    width: 272px;
+  }
 `;
 
 export const Cover = styled.img`
@@ -47,8 +51,5 @@ export const MoreInfo = styled.div`
     font-size: 12px;
     font-weight: 400;
     color: var(--light_gray);
-
-    /* max-width: 150px; */
-    /* word-wrap: break-word; */
   }
 `;

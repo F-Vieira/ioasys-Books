@@ -19,6 +19,14 @@ export const Container = styled.footer`
     font-size: 12px;
     line-height: 32px;
   }
+
+  @media screen and (min-width: 1024px) {
+    margin-right: 8%;
+  }
+
+  @media screen and (min-width: 1360px) {
+    margin-right: 10%;
+  }
 `;
 
 export const NextPrev = styled.div`

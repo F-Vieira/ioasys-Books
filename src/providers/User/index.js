@@ -7,6 +7,8 @@ const userContext = createContext();
 
 export const UserProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState({});
+
   const navigate = useNavigate();
 
   const [error, setError] = useState("");
@@ -19,6 +21,7 @@ export const UserProvider = ({ children }) => {
       .then((resp) => {
         setLoading(true);
         setTimeout(() => {
+          setUser(resp.data);
           const token = resp.headers.authorization;
           setToken(token);
           localStorage.setItem("@ioasys:token", token);
@@ -42,7 +45,7 @@ export const UserProvider = ({ children }) => {
   }, [loading, navigate, page]);
 
   return (
-    <userContext.Provider value={{ handleLogin, error }}>
+    <userContext.Provider value={{ handleLogin, error, user }}>
       {children}
     </userContext.Provider>
   );

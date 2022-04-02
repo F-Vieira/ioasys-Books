@@ -13,15 +13,15 @@ export const Container = styled.section`
   }
 
   @media screen and (min-width: 768px) {
-    line-height: 60px;
+    line-height: ${({ isPageLogin }) => (isPageLogin ? "60px" : "36px")};
 
     img {
-      width: 170px;
-      height: 60px;
+      width: ${({ isPageLogin }) => (isPageLogin ? "170px" : "104px")};
+      height: ${({ isPageLogin }) => (isPageLogin ? "60px" : "36px")};
     }
 
     h1 {
-      font-size: 60px;
+      font-size: ${({ isPageLogin }) => (isPageLogin ? "60px" : "28px")};
     }
   }
 `;

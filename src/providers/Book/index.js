@@ -54,6 +54,7 @@ export const BookProvider = ({ children }) => {
         allPages,
         page,
         setPage,
+        setPerPage,
         book,
         showBookDetail,
         setShowBookDetail,

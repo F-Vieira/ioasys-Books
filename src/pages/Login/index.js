@@ -31,7 +31,7 @@ const Login = () => {
 
   return (
     <L.Container>
-      <LogoBox logo={WhiteLogo} whiteMode />
+      <LogoBox logo={WhiteLogo} whiteMode isPageLogin />
 
       <Form handleSubmit={handleSubmit} submit={submitLogin}>
         <Input
