@@ -17,6 +17,10 @@ export const BookProvider = ({ children }) => {
   const [allPages, setAllPages] = useState(0);
 
   const handleListBooks = async () => {
+    if (window.screen.width > 1024) {
+      setPerPage(12);
+    }
+
     await api
       .get(`/books?page=${page}&amount=${perPage}`, {
         headers: {

@@ -11,17 +11,10 @@ import { useBook } from "../../providers/Book";
 import { useUser } from "../../providers/User";
 
 import * as H from "./styles";
-import { useEffect } from "react";
 
 const Home = () => {
-  const {
-    books,
-    book,
-    showBookDetail,
-    setShowBookDetail,
-    handleRetrieveBook,
-    setPerPage,
-  } = useBook();
+  const { books, book, showBookDetail, setShowBookDetail, handleRetrieveBook } =
+    useBook();
 
   const { user } = useUser();
 
@@ -31,17 +24,6 @@ const Home = () => {
     localStorage.clear();
     navigate("/");
   };
-
-  const handleChangeBooksPerPage = () => {
-    if (window.screen.width === 1024) {
-      setPerPage(12);
-    }
-  };
-
-  useEffect(() => {
-    handleChangeBooksPerPage();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [window.screen.width]);
 
   return (
     <H.Container>

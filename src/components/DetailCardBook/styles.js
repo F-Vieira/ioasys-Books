@@ -9,11 +9,14 @@ export const Container = styled.div`
   height: 100%;
 
   background-color: rgba(0, 0, 0, 0.4);
-  background-size: contain;
 
   padding: 64px 16px 16px 16px;
 
-  /* z-index: 1; */
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const Close = styled.div`
@@ -56,6 +59,29 @@ export const Card = styled.div`
     height: 350px;
     filter: drop-shadow(0px 11.9008px 17.8512px rgba(0, 0, 0, 0.3));
   }
+
+  @media screen and (min-width: 768px) {
+    width: 700px;
+    height: 400px;
+
+    display: grid;
+    grid-template-columns: 320px 300px;
+    grid-gap: 0 20px;
+
+    /* padding: 30px; */
+
+    .book_cover {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (min-height: 800px) {
+    height: 600px;
+  }
+`;
+
+export const Info = styled.div`
   .book_title {
     font-size: 28px;
     font-weight: 500;
@@ -70,7 +96,7 @@ export const Card = styled.div`
   }
 `;
 
-export const Info = styled.div`
+export const InfoDetail = styled.div`
   margin: 32px 0;
 
   & * {
