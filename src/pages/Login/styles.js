@@ -16,7 +16,7 @@ export const Container = styled.main`
   align-items: center;
 
   section {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
 
   @media screen and (min-width: 768px) {

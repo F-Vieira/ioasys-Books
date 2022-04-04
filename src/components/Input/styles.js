@@ -5,11 +5,20 @@ export const Container = styled.div`
   height: 60px;
 
   padding: 7px 12px;
+  margin: 16px 0;
 
   background-color: var(--transparent_black);
   border-radius: 4px;
 
   position: relative;
+
+  div {
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 
   @media screen and (min-width: 768px) {
     width: 368px;
@@ -27,18 +36,4 @@ export const Input = styled.input`
   color: var(--white);
   height: 24px;
   font-size: 16px;
-`;
-
-export const Button = styled.button`
-  width: 85px;
-  height: 36px;
-  border-radius: 44px;
-
-  position: absolute;
-  top: calc(50% - 30%);
-  right: 16px;
-
-  color: var(--pink);
-
-  font-weight: 600;
 `;

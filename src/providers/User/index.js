@@ -26,7 +26,8 @@ export const UserProvider = ({ children }) => {
           setToken(token);
           localStorage.setItem("@ioasys:token", token);
           setLoading(false);
-        }, 2000);
+          setError("");
+        }, 3000);
       })
       .catch((_) => {
         setError("E-mail e/ou senha incorretos.");
@@ -45,7 +46,7 @@ export const UserProvider = ({ children }) => {
   }, [loading, navigate, page]);
 
   return (
-    <userContext.Provider value={{ handleLogin, error, user }}>
+    <userContext.Provider value={{ handleLogin, error, user, loading }}>
       {children}
     </userContext.Provider>
   );

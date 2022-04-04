@@ -23,7 +23,7 @@ const Login = () => {
     resolver: yupResolver(schema),
   });
 
-  const { handleLogin, error } = useUser();
+  const { handleLogin, error, loading } = useUser();
 
   const submitLogin = (data) => {
     handleLogin(data);
@@ -47,6 +47,7 @@ const Login = () => {
           name="password"
           buttonType="submit"
           hasButton
+          isLoading={loading}
         />
         {!!error && <Error message={error} />}
       </Form>
