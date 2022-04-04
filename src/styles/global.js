@@ -19,10 +19,23 @@ export default createGlobalStyle`
     box-sizing: border-box;
     outline: none;
     border: none;
+
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--transparent_white);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: var(--transparent_black);
+      border-radius: 20px;
+    }
   }
 
   body {
     font-family: var(--primary_font);
+
   }
 
   h1, h2, h3 {
