@@ -11,15 +11,7 @@ const CardBook = ({
 }) => {
   return (
     <CB.Container onClick={onClick}>
-      <CB.Cover
-        // src={
-        //   cover === null
-        //     ? "https://d2drtqy2ezsot0.cloudfront.net/Book-1.jpg"
-        //     : cover
-        // }
-        src={cover}
-        alt={`Capa do livro ${title}`}
-      />
+      <CB.Cover src={cover} alt={`Capa do livro ${title}`} />
       <CB.Info>
         <CB.TitleAuthors>
           <h1>{title}</h1>

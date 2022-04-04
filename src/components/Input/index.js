@@ -1,6 +1,6 @@
 import * as Ipt from "./styles";
 import Button from "../Button";
-import { Spin, FadingBalls } from "react-cssfx-loading";
+import { Spin } from "react-cssfx-loading";
 
 const Input = ({
   label,

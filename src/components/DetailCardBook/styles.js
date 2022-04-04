@@ -68,8 +68,6 @@ export const Card = styled.div`
     grid-template-columns: 320px 300px;
     grid-gap: 0 20px;
 
-    /* padding: 30px; */
-
     .book_cover {
       width: 100%;
       height: 100%;
@@ -120,9 +118,6 @@ export const Review = styled.div`
     font-size: 12px;
     line-height: 20px;
     font-weight: 500;
-  }
-
-  h2 {
   }
 
   blockquote {
